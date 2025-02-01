@@ -1,7 +1,7 @@
 # Emotion-Aware Advisory System
 
 ## Overview
-The **Emotion-Aware Advisory System** is a simulated AI-powered trading advisory tool that integrates market event detection, behavior analysis, and real-time trading recommendations. It leverages **machine learning models** FinBert, DistilBert and DeepSeek to detect trading behaviors, mitigate emotionally driven decisions, and provide rational financial guidance.
+The **Emotion-Aware Advisory System** is a simulated AI-powered trading advisory tool that integrates market event detection, behavior analysis, and real-time trading recommendations. It leverages **Alpaca API** for simulated trading & market insights and **machine learning models** FinBert, DistilBert and DeepSeek to detect trading behaviors, mitigate emotionally driven decisions, and provide rational financial guidance.
 
 ## Features
 - **Real-time market event detection** (news sentiment, volatility monitoring).
@@ -27,10 +27,50 @@ pip install .
 
 ## Usage Guide
 
-### Running the Advisory System
+### Set Up Virtual Environment
+```bash
+python3 -m venv venv
+source venv/bin/activate  # Linux/macOS
+venv\Scripts\activate     # Windows (CMD)
+```
+
+### Install Dependencies
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+### Configure API Keys
+Edit emotion_advisory/config.py and replace placeholders:
+```bash
+API_KEY = os.getenv("ALPACA_API_KEY", "your_api_key_here")
+SECRET_KEY = os.getenv("ALPACA_SECRET_KEY", "your_secret_key_here")
+```
+
+### Running the System
+
+#### 1️. Start vLLM Server
+The advisory system requires vLLM for AI-driven recommendations. Start the server:
+```bash
+vllm serve deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B --tensor-parallel-size 1 --max-model-len 1024 --enforce-eager
+```
+Verify vLLM is running:
+```bash
+ss -tulnp | grep 8000   # Linux/macOS (alternative to netstat)
+```
+You should see an output similar to:
+```bash
+tcp LISTEN 0 128 0.0.0.0:8000
+```
+
+#### 2. Running the Advisory System
+To **initialize the DistilBert model**:
+```bash
+python -m emotion_advisory.reaction_detect
+```
 To run the **Emotion-Aware Advisory System**, use the following command:
 ```bash
-python -m emotion_advisory.main
+python main.py
 ```
 
 ## Contributing
