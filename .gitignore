@@ -1,5 +1,4 @@
 # Ignore logs, API keys, and compiled files
 logs/
-models/
 __pycache__/
-emotion_advisory/config.py
+
