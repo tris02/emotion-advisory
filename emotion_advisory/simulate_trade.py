@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Simulate trading actions with Alpaca.
+Simulate trading actions with Alpaca using direct REST API.
 """
 
 from alpaca_trade_api import REST
