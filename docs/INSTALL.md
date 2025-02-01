@@ -35,6 +35,10 @@ pip install .
 ## Verifying Installation
 To ensure the package is installed correctly, run:
 ```bash
+python -m emotion_advisory.main
+```
+or
+```bash
 python main.py
 ```
 
