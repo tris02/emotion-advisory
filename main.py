@@ -1,10 +1,10 @@
 import logging
 import pandas as pd
-from event_detect import check_market_volatility
-from reaction_detect import fetch_trading_data, predict_behavior_from_trading_data
-from advisory_response import run_advisory_app
-from simulate_trade import simulate_frequent_trades, simulate_aggressive_shorting_multi, simulate_high_risk_allocation
-from verify_simulation import verify_simulation_with_orders
+from emotion_advisory.event_detect import check_market_volatility
+from emotion_advisory.reaction_detect import fetch_trading_data, predict_behavior_from_trading_data
+from emotion_advisory.advisory_response import run_advisory_app
+from emotion_advisory.simulate_trade import simulate_frequent_trades, simulate_aggressive_shorting_multi, simulate_high_risk_allocation
+from emotion_advisory.verify_simulation import verify_simulation_with_orders
 
 # Configure Logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
