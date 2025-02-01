@@ -70,7 +70,7 @@ python -m emotion_advisory.reaction_detect
 ```
 To run the **Emotion-Aware Advisory System**, use the following command:
 ```bash
-python main.py
+python -m emotion_advisory.main or python main.py
 ```
 
 ## Contributing
