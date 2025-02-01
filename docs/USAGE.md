@@ -3,6 +3,10 @@
 ## Running the Advisory System
 To run the **Emotion-Aware Advisory System**, use the following command:
 ```bash
+python -m emotion_advisory.main
+```
+or
+```bash
 python main.py
 ```
 
