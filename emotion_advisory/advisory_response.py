@@ -24,8 +24,8 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Import financial analysis modules
-from event_detect import check_market_volatility
-from reaction_detect import fetch_trading_data, predict_behavior_from_trading_data
+from emotion_advisory.event_detect import check_market_volatility
+from emotion_advisory.reaction_detect import fetch_trading_data, predict_behavior_from_trading_data
 
 DISTILBERT_MODEL_PATH = "./distilbert_trading_model_multi"
 
