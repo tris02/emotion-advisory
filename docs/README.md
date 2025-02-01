@@ -1,7 +1,7 @@
 # Emotion-Aware Advisory System
 
 ## Overview
-The **Emotion-Aware Advisory System** is a simulated AI-powered trading advisory tool that integrates market event detection, behavior analysis, and real-time trading recommendations. It leverages **Alpaca API** for simulated trading & market insights and **machine learning models** FinBert, DistilBert and DeepSeek to detect trading behaviors, mitigate emotionally driven decisions, and provide rational financial guidance.
+The **Emotion-Aware Advisory System** is a simulated AI-powered trading advisory tool that integrates market event detection, behavior analysis, and real-time trading recommendations. It leverages **Alpaca API** for simulated trading & market insights and **machine learning models FinBert, DistilBert and DeepSeek R1** to detect trading behaviors, mitigate emotionally driven decisions, and provide rational financial guidance.
 
 ## Features
 - **Real-time market event detection** (news sentiment, volatility monitoring).
