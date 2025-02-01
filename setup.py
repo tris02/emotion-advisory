@@ -10,6 +10,7 @@ setup(
         "torch",
         "requests",
         "pandas",
-        "alpaca-trade-api"
+        "alpaca-trade-api",
+        "accelerate"
     ],
 )
