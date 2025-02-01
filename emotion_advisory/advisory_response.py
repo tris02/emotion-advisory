@@ -38,16 +38,16 @@ class VLLMConfig:
     repetition_penalty: float = 1.2  # Prevent redundant content
 
 def get_fallback_advice() -> str:
-    """Professional fallback advisory with concrete parameters"""
+    """Fallback advisory with concrete parameters"""
     return "- Immediately implement position sizing limits (max 2% per trade) and set volatility-adjusted stop-loss orders at 5% below current market price."
 
 def validate_and_clean_response(response: str) -> str:
-    """Enforces professional financial advisory standards"""
+    """Enforces financial advisory standards"""
     # Check for minimum quality criteria
     if not response or len(response) < 25 or not any(c.isalpha() for c in response):
         return get_fallback_advice()
     
-    # Professional formatting checks
+    # Formatting checks
     response = response.strip()
     if not response.startswith('- '):
         response = '- ' + response
@@ -66,7 +66,7 @@ def validate_and_clean_response(response: str) -> str:
     return response
 
 def generate_advice_vllm(prompt: str, config: VLLMConfig, stop_marker: str = "\n||END_RECOMMENDATION||") -> str:
-    """Enhanced LLM query handler with professional financial guardrails"""
+    """LLM query handler with financial guardrails"""
     url = "http://localhost:8000/v1/completions"
     payload = {
         "model": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
@@ -94,7 +94,7 @@ def generate_advice_vllm(prompt: str, config: VLLMConfig, stop_marker: str = "\n
 
 @dataclass
 class TradePattern:
-    """Enhanced trading pattern analysis with risk prioritization"""
+    """Trading pattern analysis with risk prioritization"""
     symbol: str
     action: str
     total_qty: int
@@ -133,7 +133,7 @@ def analyze_trade_patterns(behavior_df: pd.DataFrame) -> List[TradePattern]:
     return sorted(patterns, key=lambda x: -x.risk_score)
 
 def generate_behavior_context(behavior_df: pd.DataFrame) -> Tuple[str, List[str]]:
-    """Institutional-grade risk analysis reporting"""
+    """Risk analysis reporting"""
     patterns = analyze_trade_patterns(behavior_df)
     risk_factors = []
     pattern_descriptions = []
@@ -163,7 +163,7 @@ def generate_behavior_context(behavior_df: pd.DataFrame) -> Tuple[str, List[str]
     return context, risk_factors
 
 def build_enhanced_prompt(market_context: str, behavior_context: str, risk_factors: List[str]) -> str:
-    """Institutional investor-grade prompt engineering"""
+    """Prompt engineering"""
     return (
         f"# Professional Financial Advisory Request\n\n"
         f"## Market Context\n{market_context}\n\n"
@@ -183,7 +183,7 @@ def build_enhanced_prompt(market_context: str, behavior_context: str, risk_facto
     )
 
 def run_advisory_app() -> None:
-    """Institutional-grade advisory workflow"""
+    """Advisory workflow"""
     try:
         logger.info("Initiating portfolio risk analysis...")
         
