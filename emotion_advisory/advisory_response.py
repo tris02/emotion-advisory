@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Advisory system with recommendations for financial risk management.
+Advisory system with recommendations for trading risk management.
 """
 
 import os
